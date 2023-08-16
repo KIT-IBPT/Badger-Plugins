@@ -1,0 +1,9 @@
+---
+name: ibpt_epics
+version: "0.1"
+dependencies:
+  - badger-opt
+  - pip
+  - pip:
+    - --extra-index-url https://git.ibpt.kit.edu/api/v4/groups/148/-/packages/pypi/simple
+    - ibpt-epics
