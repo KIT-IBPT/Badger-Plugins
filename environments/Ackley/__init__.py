@@ -23,9 +23,8 @@ def Ackley(individual):
     objectives = a + np.exp
     
     for i in range(10):
-        objectives += (-a * np.exp(-b * (1/n) * xi_values[i] ** 2))
-        - np.exp((1/n) * np.cos(xi_values[i]))
-        + a + np.e
+        objectives += (-a * np.exp(-b * (1/10) * xi_values[i] ** 2))
+        - np.exp((1/10) * np.cos(xi_values[i]))
     return objectives
 
 
@@ -67,7 +66,7 @@ class Environment(environment.Environment):
         return None
 
     def _get_vrange(self, var):
-        return [-32.798, 37.768]
+        return [-32.798, 32.768]
 
     def _get_var(self, var):
         return self.variables[var]
