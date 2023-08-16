@@ -1,0 +1,6 @@
+---
+name: 
+description: "Constrainted test function Rosenbrock. See Definition in https://pymoo.org/problems/single/rastrigin.html"
+version: "0.1"
+dependencies:
+  - numpy

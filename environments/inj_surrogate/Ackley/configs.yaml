@@ -1,0 +1,6 @@
+---
+name: 
+description: "Constrainted test function Ackley. See Definition in https://pymoo.org/problems/single/ackley.html"
+version: "0.1"
+dependencies:
+  - numpy
