@@ -50,7 +50,7 @@ class Environment(environment.Environment):
 
         self.observations = {
             'y': None,
-            'some_array': np.array([1, 2, 3]),
+            'some_array': np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
         }
 
     @staticmethod
