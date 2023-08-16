@@ -20,7 +20,7 @@ def Ackley(individual):
     b = 0.2
     c = 2 * np.pi
 
-    objectives = np.add(a, np.exp)
+    objectives = a + np.e
     
     for i in range(10):
         objectives += (-a * np.exp(-b * (1/10) * xi_values[i] ** 2))
