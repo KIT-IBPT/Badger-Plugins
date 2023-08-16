@@ -73,7 +73,7 @@ class Environment(environment.Environment):
           self.variables['x4'], self.variables['x5'], self.variables['x6'], 
           self.variables['x7'], self.variables['x8'], self.variables['x9'], self.variables['x10']]
         objectives = Rosenbrock(ind)
-        self.observations['y'] = objectives[0]
+        self.observations['y'] = objectives
 
     def _get_obs(self, obs):
         return self.observations[obs]
