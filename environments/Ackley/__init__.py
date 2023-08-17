@@ -22,15 +22,7 @@ def Ackley(individual):
     d = 0.5
 
     objectives = a + np.e
-    squares = 0
-    coses = 0
 
-    for i in range(10):
-        squares += xi_values[i] ** 2
-        coses += np.cos(c * xi_values[i])
-    
-    objectives -= (a * np.exp(-b * ((d * squares) ** d)))
-    objectives -= np.exp(d * coses)
 
     return objectives
 
