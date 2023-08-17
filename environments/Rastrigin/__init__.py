@@ -18,7 +18,7 @@ def Rastrigin(individual):
     
     xi_values = np.array([x1, x2, x3, x4, x5, x6, x7, x8, x9, x10])
     
-    objectives = 10 * n + np.sum(xi_values ** 2 - 10 * np.cos(2 * np.pi * xi_values))
+    objectives = 100 + np.sum(xi_values ** 2 - 10 * np.cos(2 * np.pi * xi_values))
     return objectives
 
 
