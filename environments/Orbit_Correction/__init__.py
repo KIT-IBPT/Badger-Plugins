@@ -1,7 +1,7 @@
 import numpy as np
 from badger import environment
 from badger.interface import Interface
-from Orbit_Correction import feeder 
+from orbit_correction import feeder 
 
 
 # Pure number version
