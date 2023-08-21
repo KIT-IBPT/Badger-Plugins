@@ -231,7 +231,7 @@ class Environment(environment.Environment):
           self.variables['x27'], self.variables['x28'], self.variables['x29'], self.variables['x30'], 
           self.variables['x31']]
         
-        cors = [self.variables['x32'], self.variables['x33'], 
+        mons = [self.variables['x32'], self.variables['x33'], 
           self.variables['x34'], self.variables['x35'], self.variables['x36'], 
           self.variables['x37'], self.variables['x38'], self.variables['x39'], self.variables['x40'], 
           self.variables['x41'], self.variables['x42'], self.variables['x43'], 
@@ -245,7 +245,7 @@ class Environment(environment.Environment):
           self.variables['x67'], self.variables['x68'], self.variables['x69'], self.variables['x70'], 
           self.variables['x71'], self.variables['x72']]
         
-        objectives = Orbit_Correction(ind)
+        objectives = Orbit_Correction(mags, mons)
         self.observations['y'] = objectives
 
     def _get_obs(self, obs):
