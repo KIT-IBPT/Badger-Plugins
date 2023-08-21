@@ -105,8 +105,8 @@ class Environment(environment.Environment):
         super().__init__(interface, params)
 
         self.variables = { 
-            'x1': 0,
-            'x2': 0,
+            'x1': 1,
+            'x2': 1,
             'x3': 0,
             'x4': 0,
             'x5': 0,
