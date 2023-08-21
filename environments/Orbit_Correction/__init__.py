@@ -5,6 +5,7 @@ from badger.interface import Interface
 
 # Pure number version
 def Orbit_Correction(magnets, monitors):
+    # start of corrector magnet array #
     x1 = magnets[0]
     x2 = magnets[1]
     x3 = magnets[2]
@@ -37,6 +38,7 @@ def Orbit_Correction(magnets, monitors):
     x30 = magnets[29]
     x31 = magnets[30]
     x32 = magnets[31]
+    # start of beam monitor array #
     x33 = monitors[0]
     x34 = monitors[1]
     x35 = monitors[2]
@@ -86,7 +88,9 @@ def Orbit_Correction(magnets, monitors):
       x61, x62, x63, x64, x65, x66, x67, x68, x69, x70,
       x71, x72])
 
+    # mean square error #
     mse = 0
+    # loss 1 function #
     l1l = 0
     for i in range(72):
         mse += (xi_values[i]) ** 2
