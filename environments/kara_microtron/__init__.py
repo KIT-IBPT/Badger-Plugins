@@ -3,17 +3,6 @@ from badger import environment
 from badger.interface import Interface
 
 
-# Pure number version
-def Orbit_Correction(signals):
-
-    # array containing the beam currents. Cannot be changed because they are observables. #
-    bc_values = np.array(signals)
-
-    # still need to enter how the objectives are calculated #
-    objectives = 0
-
-    return objectives
-
 # array containing names of the beam currents. Used to communicate with SoftIOC and epics. #
 BC_NAMES = [
 
@@ -125,7 +114,7 @@ class Environment(environment.Environment):
     @staticmethod
     def list_obses():
         # array of the names of all observables #
-        return  ["name of observable"] + BC_NAMES
+        return  BC_NAMES
 
     @staticmethod
     def get_default_params():
