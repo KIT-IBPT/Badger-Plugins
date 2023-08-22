@@ -1,0 +1,8 @@
+---
+name: 
+description: "Testing the microtron with PVs."
+version: "0.1"
+dependencies:
+  - numpy
+interface:
+  - ibpt_epics

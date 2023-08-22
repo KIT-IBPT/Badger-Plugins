@@ -114,7 +114,7 @@ class Environment(environment.Environment):
 
     @staticmethod
     def list_vars():
-        # Returns the values of the corrector magnets #
+        # Returns the names of the corrector magnets #
         return [
             'DEBUG:A:SR-S1:PS:MCH-01:Current:Setpoint',
             'DEBUG:A:SR-S1:PS:MCH-02:Current:Setpoint',
@@ -168,7 +168,7 @@ class Environment(environment.Environment):
 
 
     def _get_obs(self, obs):
-        
+
         if obs == "mse":
             monitors = [self.interface.get_value(obs) for obs in BPM_NAMES]
             return Orbit_Correction(monitors)[0]
