@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
- - Values for the KARA corrector magnets that the user sets.
+ - Values for the KARA microtron corrector magnets that the user sets.
  - Values returned by the KARA beam current monitors that the user observes
 
 ## Usage

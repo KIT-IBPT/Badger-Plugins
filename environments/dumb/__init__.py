@@ -2,8 +2,8 @@ import numpy as np
 from badger import environment
 from badger.factory import get_env
 from badger.interface import Interface
-from operator import itemgetter
-import logging
+from typing import List
+import time
 
 
 class Environment(environment.Environment):
@@ -24,10 +24,6 @@ class Environment(environment.Environment):
     @staticmethod
     def list_obses():
         return ['l2', 'mean', 'l2_x_mean']
-
-    @staticmethod
-    def get_default_params():
-        return None
 
     def _get_var(self, var):
         try:
@@ -55,3 +51,12 @@ class Environment(environment.Environment):
             return self.env_naive.get_obs(obs)
         elif obs == 'l2_x_mean':
             return self.env_silly.get_obs('l2') * self.env_naive.get_obs('mean')
+        
+    @staticmethod
+    def get_default_params():
+        return {
+            'waiting_time': 1,
+        }
+    
+    def vars_changed(self, vars: List[str], values: list):
+        time.sleep(self.params["waiting_time"])

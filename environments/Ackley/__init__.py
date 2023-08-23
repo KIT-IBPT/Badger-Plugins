@@ -1,7 +1,8 @@
+from typing import List
 import numpy as np
 from badger import environment
 from badger.interface import Interface
-
+import time
 
 # Pure number version
 def Ackley(individual):
@@ -69,9 +70,6 @@ class Environment(environment.Environment):
     def list_obses():
         return ['y', 'some_array']
 
-    @staticmethod
-    def get_default_params():
-        return None
 
     def _get_vrange(self, var):
         return [-32.798, 32.768]
@@ -91,3 +89,12 @@ class Environment(environment.Environment):
 
     def _get_obs(self, obs):
         return self.observations[obs]
+    
+    @staticmethod
+    def get_default_params():
+        return {
+            'waiting_time': 1,
+        }
+    
+    def vars_changed(self, vars: List[str], values: list):
+        time.sleep(self.params["waiting_time"])

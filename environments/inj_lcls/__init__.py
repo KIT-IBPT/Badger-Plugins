@@ -1,6 +1,8 @@
 from badger import environment
 from badger.interface import Interface
 from .emit_launch.emit_ctrl_class import Emit_Meas
+from typing import List
+import time
 
 
 class Environment(environment.Environment):
@@ -46,7 +48,9 @@ class Environment(environment.Environment):
 
     @staticmethod
     def get_default_params():
-        return None
+        return {
+            'waiting_time': 1,
+        }
 
     def _get_vrange(self, var):
         return self.pv_limits[var]
@@ -81,3 +85,6 @@ class Environment(environment.Environment):
     def update_pvs_limits(self):
         for eid in self.list_vars():
             self.update_pv_limits(eid)
+
+    def vars_changed(self, vars: List[str], values: list):
+        time.sleep(self.params["waiting_time"])

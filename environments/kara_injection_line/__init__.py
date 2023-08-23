@@ -1,6 +1,8 @@
 import numpy as np
 from badger import environment
 from badger.interface import Interface
+from typing import List
+import time
 
 
 # array containing names of the beam currents. Used to communicate with SoftIOC and epics. #
@@ -71,10 +73,6 @@ class Environment(environment.Environment):
         # array of the names of all observables #
         return BEAM_CURRENT
 
-    @staticmethod
-    def get_default_params():
-        return None
-
     def _get_vrange(self, var):
         # maximum and minimum strengths of a magnet #
         self.variables[var]
@@ -89,3 +87,12 @@ class Environment(environment.Environment):
 
     def _get_obs(self, obs):
         return self.interface.get_value(obs)
+    
+    @staticmethod
+    def get_default_params():
+        return {
+            'waiting_time': 1,
+        }
+    
+    def vars_changed(self, vars: List[str], values: list):
+        time.sleep(self.params["waiting_time"])

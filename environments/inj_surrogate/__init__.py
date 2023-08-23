@@ -4,6 +4,7 @@ import time
 import json
 from badger import environment
 from badger.interface import Interface
+from typing import List
 
 
 class Environment(environment.Environment):
@@ -108,7 +109,7 @@ class Environment(environment.Environment):
     def get_default_params():
         return {
             'model_name': 'model_OTR2_NA_rms_emit_elu_2021-07-27T19_54_57-07_00',
-            'waiting_time': 0,
+            'waiting_time': 1,
         }
 
     def _get_vrange(self, var):
@@ -186,3 +187,7 @@ class Environment(environment.Environment):
             ref_point = json.load(f)
             ref_point = model.sim_to_machine(np.asarray(ref_point))
             self.ref_point = [ref_point[0]]  # nested list
+
+    
+    def vars_changed(self, vars: List[str], values: list):
+        time.sleep(self.params["waiting_time"])

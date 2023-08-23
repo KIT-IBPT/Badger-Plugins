@@ -1,8 +1,0 @@
----
-name: 
-description: "Testing the orbit correction with PVs."
-version: "0.1"
-dependencies:
-  - numpy
-interface:
-  - ibpt_epics
