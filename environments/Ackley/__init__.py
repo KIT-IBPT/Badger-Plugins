@@ -78,7 +78,8 @@ class Environment(environment.Environment):
         return self.variables[var]
 
     def _set_var(self, var, x):
-        self.variables[var] = x
+        if not self.params['read_only']:
+            self.variables[var] = x
 
         # Filling up the observations
         ind = [self.variables['x1'], self.variables['x2'], self.variables['x3'], 
@@ -94,6 +95,7 @@ class Environment(environment.Environment):
     def get_default_params():
         return {
             'waiting_time': 1,
+            'read_only': False,
         }
     
     def vars_changed(self, vars: List[str], values: list):

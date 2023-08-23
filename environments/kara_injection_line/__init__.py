@@ -6,7 +6,11 @@ import time
 
 
 # array containing names of the beam currents. Used to communicate with SoftIOC and epics. #
-BEAM_CURRENT = [ 'A:BO:DTACQChannel:BeamCurrent:Max', ]
+BEAM_CURRENT = [
+    'A:BO:DTACQChannel:BeamCurrent:Max',
+    'A:BO:DTACQChannel:BeamCurrent:Extraction:Mean',
+    'A:SR:BeamInfo:01:Current'
+    ]
 
 
 
@@ -82,7 +86,8 @@ class Environment(environment.Environment):
         return self.interface.get_value(var)
 
     def _set_var(self, var, x):
-        self.interface.set_value(var, x)
+        if not self.params['read_only']:
+            self.interface.set_value(var, x)
 
 
     def _get_obs(self, obs):
@@ -92,6 +97,7 @@ class Environment(environment.Environment):
     def get_default_params():
         return {
             'waiting_time': 1,
+            'read_only': False,
         }
     
     def vars_changed(self, vars: List[str], values: list):
