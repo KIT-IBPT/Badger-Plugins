@@ -120,7 +120,7 @@ class Environment(environment.Environment):
 
     def _get_vrange(self, var):
         # maximum and minimum strengths of a magnet #
-        self.variables[var]
+        return self.variables[var]
 
     def _get_var(self, var):
         # TODO: update pv limits every time?

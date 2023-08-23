@@ -18,16 +18,7 @@ BEAM_CURRENT = [
 class Environment(environment.Environment):
     name = 'Kara_Injection_Line'
 
-
-
-    def __init__(self, interface: Interface, params):
-        super().__init__(interface, params)
-
-
-        # array containing names of the corrector magnets initialized to their respective use ranges. Used to communicate with SoftIOC and epics. #
-
-        self.variables = {
-
+    variables = {
             'A:MI:PS:MB-11:Current:Setpoint': [0.0, 190.0],
             'A:IL:PS:MCH-01:Current:Setpoint': [-2.0, 2.0],
             'A:IL:PS:MCH-02:Current:Setpoint': [-2.0, 2.0],
@@ -44,15 +35,16 @@ class Environment(environment.Environment):
             'A:IL:PS:MQ-05:Current:Setpoint': [0.0, 8.0],
             'A:IL:PS:MB-01:Current:Setpoint': [0.0, 95.0],
             # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
-
         }
 
+    def __init__(self, interface: Interface, params):
+        super().__init__(interface, params)
+        # array containing names of the corrector magnets initialized to their respective use ranges. Used to communicate with SoftIOC and epics. #
 
     @staticmethod
     def list_vars():
         # Returns the names of the corrector magnets #
         return [
-
             'A:MI:PS:MB-11:Current:Setpoint',
             'A:IL:PS:MCH-01:Current:Setpoint',
             'A:IL:PS:MCH-02:Current:Setpoint',
@@ -79,7 +71,7 @@ class Environment(environment.Environment):
 
     def _get_vrange(self, var):
         # maximum and minimum strengths of a magnet #
-        self.variables[var]
+        return self.variables[var]
 
     def _get_var(self, var):
         # TODO: update pv limits every time?
