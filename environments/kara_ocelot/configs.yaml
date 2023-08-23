@@ -1,0 +1,8 @@
+---
+name: 
+description: "Testing the ocelot simulation of a storage ring"
+version: "0.1"
+dependencies:
+  - numpy
+interface:
+  - ibpt_epics
