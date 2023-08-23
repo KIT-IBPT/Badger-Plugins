@@ -1,7 +1,0 @@
----
-name: lcls_test
-version: "0.1"
-dependencies:
-  - badger-opt
-interface:
-  - epics
