@@ -34,6 +34,7 @@ class Environment(environment.Environment):
             'A:IL:PS:MQ-04:Current:Setpoint': [0.0, 8.0],
             'A:IL:PS:MQ-05:Current:Setpoint': [0.0, 8.0],
             'A:IL:PS:MB-01:Current:Setpoint': [0.0, 95.0],
+            'A:BO:PS:MSept-01:Hvps:Voltage:Setpoint': [0, 200],
             # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
         }
 
@@ -60,6 +61,7 @@ class Environment(environment.Environment):
             'A:IL:PS:MQ-04:Current:Setpoint',
             'A:IL:PS:MQ-05:Current:Setpoint',
             'A:IL:PS:MB-01:Current:Setpoint',
+            'A:BO:PS:MSept-01:Hvps:Voltage:Setpoint',
             # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
             
         ]
