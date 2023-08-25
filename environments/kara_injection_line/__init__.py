@@ -80,13 +80,19 @@ class Environment(environment.Environment):
             self.interface.set_value(var, x)
 
     def _get_obs(self, obs):
-        return self.interface.get_value(obs)
+        observations = []
+        for _ in range(int(self.params["n_average"])):
+    	    observations.append(self.interface.get_value(obs))
+    	    time.sleep(1.0)
+        avg_obs = np.mean(observations)
+        return avg_obs
 
     @staticmethod
     def get_default_params():
         return {
             "waiting_time": 1.0,  # delay between setting a variable and reading the observables
             "read_only": False,
+            "n_average": 1,
         }
 
     def vars_changed(self, vars: List[str], values: list):
