@@ -82,8 +82,8 @@ class Environment(environment.Environment):
     def _get_obs(self, obs):
         observations = []
         for _ in range(int(self.params["n_average"])):
-    	    observations.append(self.interface.get_value(obs))
-    	    time.sleep(1.0)
+            observations.append(self.interface.get_value(obs))
+            time.sleep(1.0)
         avg_obs = np.mean(observations)
         return avg_obs
 
