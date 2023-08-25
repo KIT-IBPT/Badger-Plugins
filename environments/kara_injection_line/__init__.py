@@ -17,27 +17,6 @@ OBSERVABLES = [
 class Environment(environment.Environment):
     name = "Kara_Injection_Line"
 
-<<<<<<< HEAD
-    variables = {
-            'A:MI:PS:MB-11:Current:Setpoint': [0.0, 190.0],
-            'A:IL:PS:MCH-01:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MCH-02:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MCH-03:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MCH-04:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MCV-01:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MCV-02:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MCV-03:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MCV-04:Current:Setpoint': [-2.0, 2.0],
-            'A:IL:PS:MQ-01:Current:Setpoint': [0.0, 8.0],
-            'A:IL:PS:MQ-02:Current:Setpoint': [0.0, 8.0],
-            'A:IL:PS:MQ-03:Current:Setpoint': [0.0, 8.0],
-            'A:IL:PS:MQ-04:Current:Setpoint': [0.0, 8.0],
-            'A:IL:PS:MQ-05:Current:Setpoint': [0.0, 8.0],
-            'A:IL:PS:MB-01:Current:Setpoint': [0.0, 95.0],
-            'A:BO:PS:MSept-01:Hvps:Voltage:Setpoint': [0, 200],
-            # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
-        }
-=======
     vranges = {
         "A:MI:PS:MB-11:Current:Setpoint": [0.0, 190.0],
         "A:IL:PS:MCH-01:Current:Setpoint": [-2.0, 2.0],
@@ -54,9 +33,9 @@ class Environment(environment.Environment):
         "A:IL:PS:MQ-04:Current:Setpoint": [0.0, 8.0],
         "A:IL:PS:MQ-05:Current:Setpoint": [0.0, 8.0],
         "A:IL:PS:MB-01:Current:Setpoint": [0.0, 95.0],
+        "A:BO:PS:MSept-01:Hvps:Voltage:Setpoint": [0, 200],
         # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
     }
->>>>>>> cb861104d547d8c2874e540bd56284b524a2cf7a
 
     def __init__(self, interface: Interface, params):
         super().__init__(interface, params)
@@ -65,24 +44,6 @@ class Environment(environment.Environment):
     def list_vars():
         # Returns the names of the actuators
         return [
-<<<<<<< HEAD
-            'A:MI:PS:MB-11:Current:Setpoint',
-            'A:IL:PS:MCH-01:Current:Setpoint',
-            'A:IL:PS:MCH-02:Current:Setpoint',
-            'A:IL:PS:MCH-03:Current:Setpoint',
-            'A:IL:PS:MCH-04:Current:Setpoint',
-            'A:IL:PS:MCV-01:Current:Setpoint',
-            'A:IL:PS:MCV-02:Current:Setpoint',
-            'A:IL:PS:MCV-03:Current:Setpoint',
-            'A:IL:PS:MCV-04:Current:Setpoint',
-            'A:IL:PS:MQ-01:Current:Setpoint',
-            'A:IL:PS:MQ-02:Current:Setpoint',
-            'A:IL:PS:MQ-03:Current:Setpoint',
-            'A:IL:PS:MQ-04:Current:Setpoint',
-            'A:IL:PS:MQ-05:Current:Setpoint',
-            'A:IL:PS:MB-01:Current:Setpoint',
-            'A:BO:PS:MSept-01:Hvps:Voltage:Setpoint',
-=======
             "A:MI:PS:MB-11:Current:Setpoint",
             "A:IL:PS:MCH-01:Current:Setpoint",
             "A:IL:PS:MCH-02:Current:Setpoint",
@@ -98,7 +59,7 @@ class Environment(environment.Environment):
             "A:IL:PS:MQ-04:Current:Setpoint",
             "A:IL:PS:MQ-05:Current:Setpoint",
             "A:IL:PS:MB-01:Current:Setpoint",
->>>>>>> cb861104d547d8c2874e540bd56284b524a2cf7a
+            "A:BO:PS:MSept-01:Hvps:Voltage:Setpoint",
             # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
         ]
 
