@@ -1,6 +1,7 @@
 import time
 from typing import List
 
+import numpy as np
 from badger import environment
 from badger.interface import Interface
 
@@ -117,13 +118,17 @@ class Environment(environment.Environment):
             self.interface.set_value(var, x)
 
     def _get_obs(self, obs):
-        return self.interface.get_value(obs)
+        observations = []
+        for _ in range(int(self.params["n_average"])):
+            observations.append(self.interface.get_value(obs))
+        return np.mean(observations)
 
     @staticmethod
     def get_default_params():
         return {
             "waiting_time": 1,
             "read_only": False,
+            "n_average": 1,
         }
 
     def vars_changed(self, vars: List[str], values: list):
