@@ -10,6 +10,7 @@ OBSERVABLES = [
     "A:BO:DTACQChannel:BeamCurrent:Max",
     "A:BO:DTACQChannel:BeamCurrent:Extraction:Mean",
     "A:SR:BeamInfo:01:Current",
+    "A:AX:DAQDT:05:1:AI:WF:08L:V.VALE",
 ]
 
 
@@ -18,6 +19,12 @@ class Environment(environment.Environment):
     name = "Kara_Injection_Line"
 
     vranges = {
+        "A:MI:PS:MCH-08:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCH-09:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCH-10:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-08:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-09:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-10:Current:Setpoint": [-2.0, 2.0],
         "A:MI:PS:MB-11:Current:Setpoint": [0.0, 190.0],
         "A:IL:PS:MCH-01:Current:Setpoint": [-2.0, 2.0],
         "A:IL:PS:MCH-02:Current:Setpoint": [-2.0, 2.0],
@@ -44,6 +51,12 @@ class Environment(environment.Environment):
     def list_vars():
         # Returns the names of the actuators
         return [
+            "A:MI:PS:MCH-08:Current:Setpoint",
+            "A:MI:PS:MCH-09:Current:Setpoint",
+            "A:MI:PS:MCH-10:Current:Setpoint",
+            "A:MI:PS:MCV-08:Current:Setpoint",
+            "A:MI:PS:MCV-09:Current:Setpoint",
+            "A:MI:PS:MCV-10:Current:Setpoint",
             "A:MI:PS:MB-11:Current:Setpoint",
             "A:IL:PS:MCH-01:Current:Setpoint",
             "A:IL:PS:MCH-02:Current:Setpoint",
