@@ -10,7 +10,7 @@ OBSERVABLES = [
     "A:BO:DTACQChannel:BeamCurrent:Max",
     "A:BO:DTACQChannel:BeamCurrent:Extraction:Mean",
     "A:SR:BeamInfo:01:Current",
-    "A:AX:DAQDT:05:1:AI:WF:08L:V.VALE",
+    "A:AX:DAQDT:05:1:AI:WF:08:V.VALE",
 ]
 
 
