@@ -11,12 +11,20 @@ OBSERVABLES = [
     "A:BO:DTACQChannel:BeamCurrent:Extraction:Mean",
     "A:SR:BeamInfo:01:Current",
     "A:AX:DAQDT:05:1:AI:WF:08:V.VALE",
+    "A:MI:DTACQChannel:BeamCurrent-EGun:Mean",
+    "A:MI:DTACQChannel:BeamCurrent-02:Mean",
+    "A:MI:DTACQChannel:BeamCurrent-03:Mean",
+    "A:MI:DTACQChannel:BeamCurrent-04:Mean",
+    "A:MI:DTACQChannel:BeamCurrent-05:Mean",
+    "A:MI:DTACQChannel:BeamCurrent-06:Mean",
+    "A:MI:DTACQChannel:BeamCurrent-07:Mean",
+    "A:MI:DTACQChannel:BeamCurrent-08:Mean",
 ]
 
 
 # environment containing all the process variables and objective functions for the KARA Microtron
 class Environment(environment.Environment):
-    name = "Kara_Injection_Line"
+    name = "Kara_Injectors"
 
     vranges = {
         "A:MI:PS:MCH-08:Current:Setpoint": [-2.0, 2.0],
@@ -42,6 +50,24 @@ class Environment(environment.Environment):
         "A:IL:PS:MB-01:Current:Setpoint": [0.0, 95.0],
         "A:BO:PS:MSept-01:Hvps:Voltage:Setpoint": [0, 200],
         "A:TI:SignGen:MI-01:Power": [-10.0, -5.0],
+        "A:MI:PS:MCH-01:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCH-03:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCH-04:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCH-05:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCH-06:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCH-07:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-01:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-02:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-03:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-04:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-05:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-06:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MCV-07:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MQV-01:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MQV-02:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MSol-01:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MSol-02:Current:Setpoint": [-2.0, 2.0],
+        "A:MI:PS:MSol-03:Current:Setpoint": [-2.0, 2.0],
         # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
     }
 
@@ -75,6 +101,24 @@ class Environment(environment.Environment):
             "A:IL:PS:MB-01:Current:Setpoint",
             "A:BO:PS:MSept-01:Hvps:Voltage:Setpoint",
             "A:TI:SignGen:MI-01:Power",
+            "A:MI:PS:MCH-01:Current:Setpoint",
+            "A:MI:PS:MCH-03:Current:Setpoint",
+            "A:MI:PS:MCH-04:Current:Setpoint",
+            "A:MI:PS:MCH-05:Current:Setpoint",
+            "A:MI:PS:MCH-06:Current:Setpoint",
+            "A:MI:PS:MCH-07:Current:Setpoint",
+            "A:MI:PS:MCV-01:Current:Setpoint",
+            "A:MI:PS:MCV-02:Current:Setpoint",
+            "A:MI:PS:MCV-03:Current:Setpoint",
+            "A:MI:PS:MCV-04:Current:Setpoint",
+            "A:MI:PS:MCV-05:Current:Setpoint",
+            "A:MI:PS:MCV-06:Current:Setpoint",
+            "A:MI:PS:MCV-07:Current:Setpoint",
+            "A:MI:PS:MQV-01:Current:Setpoint",
+            "A:MI:PS:MQV-02:Current:Setpoint",
+            "A:MI:PS:MSol-01:Current:Setpoint",
+            "A:MI:PS:MSol-02:Current:Setpoint",
+            "A:MI:PS:MSol-03:Current:Setpoint",
             # 'A:IL:PS:MB-02:Current:Setpoint': [0.0, 95.0], not in KARA registry
         ]
 

@@ -56,6 +56,7 @@ class Environment(environment.Environment):
         "A:MI:PS:MB-08:Current:Setpoint": [0.0, 110.0],
         "A:MI:PS:MB-10:Current:Setpoint": [0.0, 110.0],
         "A:MI:PS:MB-11:Current:Setpoint": [0.0, 190.0],
+        "A:TI:SignGen:MI-01:Power": [-10.0, -5.0],
     }
 
     def __init__(self, interface: Interface, params):
@@ -99,6 +100,7 @@ class Environment(environment.Environment):
             "A:MI:PS:MB-08:Current:Setpoint",
             "A:MI:PS:MB-10:Current:Setpoint",
             "A:MI:PS:MB-11:Current:Setpoint",
+            "A:TI:SignGen:MI-01:Power",
         ]
 
     @staticmethod
